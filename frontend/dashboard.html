@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="./css/dashboard.css" />
+</head>
+<body>
+<header>
+    <h1>Bienvenido, <span id="nombreUsuario"></span> (<span id="rolUsuario"></span>)</h1>
+    <button id="logoutBtn">Cerrar sesión</button>
+</header>
+
+<nav>
+    <button id="btnInventario">Inventario</button>
+    <button id="btnRegistrarProducto" style="display: none;">Registrar Producto</button>
+    <button id="btnMovimientos">Historial de Movimientos</button>
+    <button id="btnRegistrarUsuario">Registrar Usuario</button> <!-- NUEVO -->
+</nav>
+
+<main>
+    <section id="seccionInventario" style="display: none;">
+        <h2>Inventario</h2>
+        <table border="1">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Cantidad</th>
+                <th>Estatus</th>
+                <th>Acciones</th>
+            </tr>
+            </thead>
+            <tbody id="tablaInventarioBody"></tbody>
+        </table>
+        <div id="paginacionInventario" style="margin-top: 10px;"></div>
+    </section>
+
+    <section id="seccionMovimientos" style="display: none;">
+        <h2>Historial de Movimientos</h2>
+        <div class="filtros-movimientos" style="margin-bottom: 10px;">
+            <button onclick="filtrarMovimientos('todos')">Todos</button>
+            <button onclick="filtrarMovimientos('entrada')">Entradas</button>
+            <button onclick="filtrarMovimientos('salida')">Salidas</button>
+        </div>
+        <table border="1">
+            <thead>
+            <tr>
+                <th>ID Movimiento</th>
+                <th>Producto</th>
+                <th>Tipo</th>
+                <th>Cantidad</th>
+                <th>Fecha</th>
+                <th>Usuario</th>
+            </tr>
+            </thead>
+            <tbody id="tablaMovimientosBody"></tbody>
+        </table>
+        <div id="paginacionMovimientos" style="margin-top: 10px;"></div>
+    </section>
+
+    <section id="seccionRegistrarUsuario" style="display: none;">
+        <h2>Registrar Nuevo Usuario</h2>
+        <form id="formRegistroUsuario">
+            <input type="text" id="nombreNuevo" placeholder="Nombre" required />
+            <input type="email" id="correoNuevo" placeholder="Correo electrónico" required />
+            <input type="password" id="contrasenaNuevo" placeholder="Contraseña" required />
+            <select id="rolNuevo" required>
+                <option value="">Selecciona un rol</option>
+                <option value="ADMINISTRADOR">ADMINISTRADOR</option>
+                <option value="ALMACENISTA">ALMACENISTA</option>
+            </select>
+            <button type="submit">Registrar</button>
+        </form>
+        <p class="mensaje" id="mensajeRegistro"></p>
+    </section>
+</main>
+
+<script src="./scripts/dashboard.js"></script>
+</body>
+</html>

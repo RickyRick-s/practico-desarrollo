@@ -1,0 +1,105 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 20px;
+  background-color: #f9fafb;
+  color: #333;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #ddd;
+}
+
+header h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+nav {
+  margin: 20px 0;
+}
+
+button {
+  margin-right: 10px;
+  padding: 8px 14px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #3b82f6;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #2563eb;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+th, td {
+  padding: 12px 10px;
+  border-bottom: 1px solid #eee;
+  text-align: center;
+}
+
+th {
+  background-color: #3b82f6;
+  color: white;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+tr:nth-child(even) {
+  background-color: #f4f7fb;
+}
+
+tr:hover {
+  background-color: #e1e8ff;
+}
+
+@media (max-width: 600px) {
+  body {
+    margin: 10px;
+  }
+  header h1 {
+    font-size: 1.2rem;
+  }
+  button {
+    padding: 6px 10px;
+    font-size: 0.9rem;
+  }
+  th, td {
+    padding: 8px 6px;
+  }
+}
+
+#formRegistroUsuario {
+  max-width: 400px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#formRegistroUsuario input,
+#formRegistroUsuario select,
+#formRegistroUsuario button {
+  padding: 10px;
+  font-size: 1rem;
+}
+
+.mensaje {
+  font-weight: bold;
+  margin-top: 10px;
+}
